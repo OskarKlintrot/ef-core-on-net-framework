@@ -1,7 +1,10 @@
-﻿using System;
+﻿using EfCoreDemoWebApi.Entities;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace EfCoreDemoWebApi
 {
@@ -19,6 +22,11 @@ namespace EfCoreDemoWebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+
+        public static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<BloggingContext>(options => options.UseInMemoryDatabase("BloggingContext"));
         }
     }
 }
