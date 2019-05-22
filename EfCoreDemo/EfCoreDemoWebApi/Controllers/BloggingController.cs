@@ -1,4 +1,5 @@
-﻿using EfCoreDemoWebApi.Entities;
+﻿using EfCoreDemoWebApi.BusinessLogic;
+using EfCoreDemoWebApi.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace EfCoreDemoWebApi.Controllers
 {
     public class BloggingController : ApiController
     {
-        private readonly BloggingContext _bloggingContext;
+        private readonly BlogService _blogService;
 
-        public BloggingController(BloggingContext bloggingContext)
+        public BloggingController(BlogService blogService)
         {
-            _bloggingContext = bloggingContext;
+            _blogService = blogService;
         }
 
         // GET api/<controller>

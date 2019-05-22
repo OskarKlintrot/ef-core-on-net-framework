@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BusinessLogic\BlogService.cs" />
     <Compile Include="Controllers\BloggingController.cs" />
     <Compile Include="Entities\BloggingContext.cs" />
     <Compile Include="Global.asax.cs">

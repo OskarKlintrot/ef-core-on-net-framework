@@ -7,6 +7,7 @@ using System.Web.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Web.Http.Dependencies;
 using System.Web.Http.Controllers;
+using EfCoreDemoWebApi.BusinessLogic;
 
 namespace EfCoreDemoWebApi
 {
@@ -34,6 +35,7 @@ namespace EfCoreDemoWebApi
         public static void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddTransient<BlogService>()
                 .AddControllersAsServices()
                 .AddDbContext<BloggingContext>(options => options.UseInMemoryDatabase("BloggingContext"));
         }
